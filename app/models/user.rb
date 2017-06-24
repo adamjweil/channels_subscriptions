@@ -3,7 +3,8 @@ class User < ApplicationRecord
   validates :first_name, :last_name, :email, :password, presence: true
   validates :email, uniqueness: true
 
-  has_many :channels, class_name: "Subscription"
+  has_many :subscriptions
+  has_many :channels, through: :subscriptions
 
   def password
     @password ||= BCrypt::Password.new(hashed_password)
