@@ -1,15 +1,17 @@
 <ul>
   <li><%=@channel.id%> - <%=@channel.name%> /
-  <%=@channel.callsign%>: <%=@channel.price_per_month%>
+  <%=@channel.callsign%>: <%=@channel.price_per_month%> |
+  Subscribers: <%=@channel.subscribers.count%>
   </li>
 </ul>
-
-<%if current_user.channels.exists?(id: @channel.id)%>
-  <form action='/channels/<%=@channel.id%>/unsubscribe' method='post'>
-    <input type='submit' value='unsubscribe'>
-  </form>
-<% else %>
-  <form action='/channels/<%=@channel.id%>/subscribe' method='post'>
-    <input type='submit' value='subscribe'>
-  </form>
+<%if logged_in?%>
+  <%if current_user.channels.exists?(id: @channel.id)%>
+    <form action='/channels/<%=@channel.id%>/unsubscribe' method='post'>
+      <input type='submit' value='unsubscribe'>
+    </form>
+  <% else %>
+    <form action='/channels/<%=@channel.id%>/subscribe' method='post'>
+      <input type='submit' value='subscribe'>
+    </form>
+  <% end %>
 <% end %>

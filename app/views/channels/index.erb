@@ -1,5 +1,5 @@
 <ul>
   <%@all_channels.each do |channel|%>
-    <li><%=channel.name%></li>
+    <li><a href=<%="/channels/#{channel.id}"%>><%=channel.name%></a></li>
   <%end%>
 </ul>

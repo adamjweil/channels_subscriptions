@@ -1,5 +1,5 @@
 get '/channels' do
-  @all_channels = Channel.select(:name)
+  @all_channels = Channel.select(:name, :id)
   erb :'/channels/index'
 end
 
@@ -27,3 +27,9 @@ post '/channels/:id/unsubscribe' do
   end
   redirect '/profile'
 end
+
+=begin
+  References
+  1) guides.rubyonrails.org on "Active Record Query Interface"
+  http://guides.rubyonrails.org/active_record_querying.html
+=end

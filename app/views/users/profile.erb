@@ -2,7 +2,7 @@
 
 <p>List of your channels:</p>
 <ul>
-<%@current_user.channels.each do |channel|%>
+<%@current_user.channels.sort.each do |channel|%>
   <li><%=channel.id%> - <%=channel.name%>: <%=channel.price_per_month%></li>
 <%end%>
 </ul>
