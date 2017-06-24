@@ -12,3 +12,9 @@ post '/users' do
     erb :'/users/new_user'
   end
 end
+
+
+get '/profile' do
+  @current_user = current_user
+  erb :'/users/profile'
+end

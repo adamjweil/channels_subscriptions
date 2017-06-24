@@ -10,3 +10,10 @@ class Channel < ApplicationRecord
   validates :price_per_month, presence: true
 
 end
+
+
+=begin
+  References
+  1) guides.rubyonrails.org on "Association Basics"
+  http://guides.rubyonrails.org/association_basics.html
+=end

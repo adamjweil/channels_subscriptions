@@ -1,6 +1,7 @@
 get '/' do
 
-  erb :index
+  # erb :index no longer used
+  redirect '/channels'
 end
 
 get '/404' do

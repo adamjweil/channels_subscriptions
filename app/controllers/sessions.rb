@@ -9,7 +9,7 @@ post '/sessions' do
   if !params[:user][:email].nil? || !params[:user][:password].nil?
     if User.authenticate(params[:user][:email],params[:user][:password])
       session[:user_id] = User.find_by(email: params[:user][:email]).id
-      redirect '/'
+      redirect '/profile'
     else
       redirect '/404'
     end
