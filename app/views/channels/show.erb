@@ -1,0 +1,9 @@
+<dir>
+  <ul>
+    <% if log_in? %>
+      <li><h1><%= @channel.name %></h1></li>
+      <li><h3><%= @channel.callsign %></h3></li>
+      <li><h4><%= @channel.price_per_month %></h4></li>
+    <% end %>
+  </ul>
+</dir>

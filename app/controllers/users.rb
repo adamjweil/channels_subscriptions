@@ -1,6 +1,4 @@
 get '/users/new' do 
-  @users = User.new
-    
   erb :'users/new'
 end
 

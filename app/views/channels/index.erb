@@ -1,0 +1,12 @@
+<main role="main">
+  <ul class="channel-list">
+    <% @channels.each do |channel| %>
+      <% if log_in? %>
+        <a href="/channels/<%= channel.id %>"><h2><li><%= channel.name %></li></h2></a>
+        <li><%= channel.price_per_month %></li>
+      <% else %>
+        <h2><li><%= channel.name %></li></h2>
+      <% end %>
+    <% end %>
+  </ul>
+</main>
