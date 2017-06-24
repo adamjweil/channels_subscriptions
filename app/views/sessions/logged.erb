@@ -3,6 +3,13 @@
     <h1> Welcome, <%=current_user.first_name%> </h1>
   <% end %>
 
+  <h3>Your Channels:</h3>
+    <ul>
+      <% user_subs = Subscription.find_by(user_id: current_user.id) %>
+        <% user_channels = user_subs.channel_id %>
+         <li><%= Channel.find_by(id: user_channels).name %> | <%= Channel.find_by(id: user_channels).price_per_month %></li>
+    </ul>
+
   <table>
     <form action="/logged" method="post">
       <a href="/logout">Logout</a>
