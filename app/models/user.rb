@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   # Associations
   has_many :subscriptions
-  
+
   # Validations
   validates :first_name, presence: true
   validates :last_name, presence: true
@@ -15,6 +15,17 @@ class User < ApplicationRecord
   def password=(password_string)
     @password = BCrypt::Password.create(password_string)
     self.hashed_password = @password
+  end
+
+  def self.authenticate(email, password)
+    user = User.find_by(email: email)
+    p "*"*100
+    p user
+    if user.nil? == false && user.password == password
+      return true
+    else
+      return false
+    end
   end
 end
 
