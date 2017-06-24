@@ -19,5 +19,12 @@
           <p>New? Create an account below:</p> <input type="submit" value="Register">
         </div>
       </form>
+      <h3>Available Channels:</h3>
+        <ul>
+          <% channels = Channel.all %>
+            <% channels.each do |channel| %>
+          <li> <%= channel.name %> </li>
+          <% end %>
+        </ul>
     </table>
 </div>
