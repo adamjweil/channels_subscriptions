@@ -1,0 +1,22 @@
+<h1> <%= @current_channel.name %> </h1>
+<p> More Information: </p>
+<ul>
+  <li>Channel Name: <%= @current_channel.name %> </li>
+  <li>Callsign: <%= @current_channel.callsign %> </li>
+  <li>Price Per Month: $<%= @current_channel.price_per_month %> </li>
+  <li>Total Subscribers: <%= @current_channel.subscribers.count %> </li>
+</ul>
+<div>
+<% if logged_in? && !subscribed?(@current_channel.id, current_user) %>
+  <a href='/subscriptions/new'>Subscribe</a>
+<% elsif logged_in? && subscribed?(@current_channel.id, current_user) %>
+  <a href='PLACEHOLDER'>Unsubscribe</a>
+<% end %>
+</div>
+<div>
+<% if logged_in?%>
+  <a href='/subscriptions/<%= current_user.id %>'>Home</a>
+<% else%>
+  <a href='/'>Home</a>
+<% end %>
+</div>

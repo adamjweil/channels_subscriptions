@@ -1,0 +1,6 @@
+<h1>Current Available Channels</h1>
+<ul>
+  <% @all_channels.each do |channel| %>
+    <li> <a href="/channels/<%= channel.id %>"> <%= channel.name %></a> </li>
+  <% end %>
+</ul>
