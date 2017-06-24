@@ -1,15 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="/css/normalize.css?app=skills">
-  <link rel="stylesheet" href="/css/application.css?app=skills">
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/application.css">
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="/js/application.js?app=skills"></script>
+  <script src="/js/application.js"></script>
 
-  <title></title>
+  <title>Wangtron's Cable Company</title>
 </head>
 <body>
-  <%= yield %>
+  <header role="banner" class="mar-t-5 pad-t-2 pad-b-4 pad-s-1 wrap-float bg-white">
+    <div class="max-w-700 center wrap-float">
+      <nav class="clearfix mar-b-1">
+        <ul class="no-bullets no-margin no-padding right">
+          <li class="pipe-separate t-black left"><a href="/">Home</a></li>
+          <% if logged_in? %>
+          <li class="pipe-separate t-black left"><a href="/logout">Log out</a></li>
+          <% else %>
+          <li class="pipe-separate t-black left"><a href="/User/new">Register</a></li>
+          <% end %>
+          <li class="pipe-separate t-black left"><a href="/Users/login">
+            <% if logged_in? %>
+            <%= current_user.first_name %>
+            <% else %>
+            Login</a></li>
+            <% end %>
+          </a></li>
+
+        </ul>
+      </nav>
+
+      <div class="logo-container">
+        <img class="logo" src="/images/internets.jpg" class="center block">
+        <h1>Wangtron's Cable Company</h1>
+      </div>
+    </div>
+  </header>
+
+  <div class="bg-dk-grey pad-t-2 pad-s-1 pad-b-8 mar-b-16 c-white">
+    <div class="max-w-700 center">
+      <%= yield %>
+    </div>
+  </div>
 </body>
 </html>

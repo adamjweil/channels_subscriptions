@@ -1,75 +1,292 @@
-.container {
-  margin: 20px auto;
-  width: 800px;
-  padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+/* *       - https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors
+/* :after  - https://developer.mozilla.org/en-US/docs/Web/CSS/%3A%3Aafter*/
+/* :before - https://developer.mozilla.org/en-US/docs/Web/CSS/%3A%3Abefore */
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-.container h1 {
-  font-size: 17pt;
 
+/* element styling */
+html {
+  height: 100%;
+  background-color: #32bb7d;
+  background: url(../images/Cool_background.jpg);
+  background-attachment: fixed;
+  line-height: 1.4;
 }
 
-nav {
-  width: 100%;
-  height: 40px;
-  font-weight: bold;
+body {
+  height: 100%;
 }
 
-nav .brand, nav .brand a {
-  margin-left: 25px;
-  font-size: 18pt;
+a {
+  color: #32bb7d;
   text-decoration: none;
-  color: #444;
-  width: 60%;
-  display: inline-block;
 }
 
-nav ul {
-  display: inline-block;
-  width: 30%;
-  text-align: right;
+  a:hover {
+    color: #6ec7a5;
+    text-decoration: underline;
+  }
+
+input[type=text], input[type=password], textarea {
+  color: #05724f;
 }
 
-nav li {
-  margin-right: 25px;
+
+/* positioning */
+.block {
+  display: block;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+.inline {
   display: inline;
 }
 
-nav li a {
-  color: gray;
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+
+/* formatting */
+.bg-dk-green {
+  background-color: #05724f;
+}
+
+.bg-white {
+  background-color: #fefefe;
+}
+
+.button {
+  background: #32bb7d;
+  color: #fefefe;
+  padding: 1em;
   text-decoration: none;
 }
 
-nav li a:hover {
+  .button:hover {
+    color: white;
+    text-decoration: none;
+    background-color: #6ec7a5;
+  }
+
+.c-dk-green {
+  color: #05724f;
+}
+
+.c-lt-gray {
+  color: #cccccc;
+}
+
+.c-white {
+  color: #fefefe;
+}
+
+  a.c-white:hover {
+    color: #fefefe;
+  }
+
+.clearfix:after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
+.col-3 {
+  width: 33.33%;
+}
+
+.font-2 {
+  font-size: 2em;
+}
+
+.font-3-4{
+  font-size: .75em;
+}
+
+.h-10 {
+  height: 10em;
+}
+
+.hover-underline:hover {
   text-decoration: underline;
 }
 
-form label {
-  font-weight: bold;
-  margin-right: 20px;
+.mar-b-1 {
+  margin-bottom: 1em;
 }
 
-input {
-  margin-bottom: 10px;
+.mar-b-2 {
+  margin-bottom: 2em;
 }
 
-.errors {
-  color: red;
+.mar-b-3 {
+  margin-bottom: 3em;
 }
 
-form.quirks {
-  display: inline-block;
+.mar-b-8 {
+  margin-bottom: 8em;
 }
 
-.submit {
+.mar-b-16 {
+  margin-bottom: 16em;
+}
+
+.mar-t-2 {
+  margin-top: 2em;
+}
+
+.mar-t-3 {
+  margin-top: 3em;
+}
+
+.mar-t-4 {
+  margin-top: 4em;
+}
+
+.mar-t-5 {
+  margin-top: 5em;
+}
+
+.max-w-700 {
+  max-width: 700px;
+}
+
+.no-bg {
+  background: none;
+}
+
+.no-border {
+  border: none;
+}
+
+.no-bullets {
+  list-style-type: none;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.no-outline {
+  outline: none;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.no-resize {
+  resize: none;
+}
+
+.pad-1 {
+  padding: 1em;
+}
+
+.pad-2 {
+  padding: 2em;
+}
+
+.pad-b-1-4 {
+  padding-bottom: .25em;
+}
+
+.pad-b-2 {
+  padding-bottom: 2em;
+}
+
+.pad-b-3 {
+  padding-bottom: 3em;
+}
+
+.pad-b-4 {
+  padding-bottom: 4em;
+}
+
+.pad-b-8 {
+  padding-bottom: 8em;
+}
+
+.pad-s-1 {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.pad-t-1 {
+  padding-top: 1em;
+}
+
+.pad-t-2 {
+  padding-top: 2em;
+}
+
+.pipe-separate {
+  padding-left: 1em;
+  padding-right: 1em;
+  border-right: 1px solid;
+}
+
+  .pipe-separate:first-of-type {
+    padding-left: 0;
+  }
+
+  .pipe-separate:last-of-type {
+    padding-right: 0;
+    border-right: none;
+  }
+
+.round-1 {
+  border-radius: 1em;
+}
+
+.t-light-green {
+  color: #32bb7d;
+}
+
+.text-c {
   text-align: center;
 }
 
-.label {
-  font-weight: bold;
-  float: left;
-  text-align: right;
-  margin-right: 20px;
-  width: 200px;
+.w-50 {
+  width: 50%;
+}
+
+.w-66 {
+  width: 66.66%;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.wrap-float {
+  overflow: auto;
+}
+
+.logo-container {
+  border: 5px solid #05724f;
+  color: #05724f;
+  width: 305px;
+  height: 305px;
+  border-radius: 50%;
+  padding: 20px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.logo {
+  width:160px;
 }
