@@ -4,10 +4,8 @@ get '/users/new' do
 end
 
 post '/users' do
-  @user = User.new(
-    params[:user]
-  )
-  if @user.valid?
+  @user = User.new(params[:user])
+  if @user.valid? && params[:user][:password].length>0
     @user.save
     erb :'/users/success'
   else
