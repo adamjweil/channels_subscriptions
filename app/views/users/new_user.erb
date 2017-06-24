@@ -1,0 +1,22 @@
+<form action='/users' method='post'>
+  <div>
+    <label>First Name</label>
+    <input type='text' name='user[first_name]' value=<%=@user.first_name%>>
+    <%=@user.errors.messages[:first_name].join("|")%>
+  </div>
+  <div>
+    <label>Last Name</label>
+    <input type='text' name='user[last_name]'value=<%=@user.last_name%>>
+    <%=@user.errors.messages[:last_name].join("|")%>
+  </div>
+  <div>
+    <label>Email</label>
+    <input type='text' name='user[email]' value=<%=@user.email%>>
+    <%=@user.errors.messages[:email].join("|")%>
+  </div>
+  <div>
+    <label>Password</label>
+    <input type='password' name='user[password]'>
+  </div>
+  <input type='submit'>
+</form>
