@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   # Associations
   has_many :subscriptions
+  has_many :channels, through: :subscriptions
 
   # Validations
   validates :first_name, presence: true

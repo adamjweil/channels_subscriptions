@@ -1,6 +1,8 @@
 class Channel < ApplicationRecord
   # Associations
   has_many :subscriptions
+  has_many :users, through: :subscriptions
+  has_many :subscribers, through: :subscriptions, source: :user
 
   # Validations
   validates :name, presence: true
