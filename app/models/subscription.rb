@@ -1,3 +1,4 @@
 class Subscription < ApplicationRecord
-  # Remember to create a migration!
+  has_many :users
+  has_many :channels
 end

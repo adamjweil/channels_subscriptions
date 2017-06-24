@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  has_many :subscriptions
+  has_many :channels, :class_name => 'Subscription', :foreign_key => :channel_id
+
   validates :email, :hashed_password, presence: true
   validates :email, uniqueness: true
 
