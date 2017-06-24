@@ -14,5 +14,9 @@ post '/users/new' do
 end
 
 get '/user/:id' do
-  "Hello World"
+  if logged_in?
+    erb :'/users/profile'
+  else
+    redirect '/'
+  end
 end
