@@ -1,0 +1,17 @@
+<a class="block button w-100 mar-t-2 mar-b-3 pad-2 round-1 text-c center">These are your subscriptions</a>
+
+<main role="main">
+  <ul class="entries-list no-bullets no-padding">
+    <% @subscriptions.each do |subscription| %>
+      <li class="entry-item pad-b-4">
+        <class="entry-title font-2 pad-b-1-4 c-white"><%= subscription.channel.name %></a> &mdash;
+        <class="entry-title font-2 pad-b-1-4 c-white">$<%= subscription.channel.price_per_month %> Dollas per month ya'll</a>
+    <% end %>
+      <a class="block button w-100 mar-t-2 mar-b-3 pad-2 round-1 text-c center">These are the subscriptions you <strong>DONT</strong> have!</a>
+      <%  @channel = Channel.all %>
+      <% @channel.each do |channel| %>
+      <form method="post" action="/User/update"><name="users[user_id]"><%=  channel.name %><br><input type="submit" value="Register BA BLAM!" tabindex="3" class="block button w-50 mar-t-4 mar-b-3 pad-2 round-1 text-c center no-border no-outline">
+        <% end %>
+
+  </ul>
+</main>

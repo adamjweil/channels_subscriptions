@@ -20,11 +20,10 @@
           <% else %>
           <li class="pipe-separate t-black left"><a href="/User/new">Register</a></li>
           <% end %>
-          <li class="pipe-separate t-black left"><a href="/Users/login">
             <% if logged_in? %>
-            <%= current_user.first_name %>
+            <li class="pipe-separate t-black left"><a href="/Users/:id"><%= current_user.first_name %>
             <% else %>
-            Login</a></li>
+            <li class="pipe-separate t-black left"><a href="/Users/login">Login</a></li>
             <% end %>
           </a></li>
 
