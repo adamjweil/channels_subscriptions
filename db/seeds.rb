@@ -21,7 +21,7 @@ end
 users.each do |user|
   user_channels = channels.sample(rand(2..4))
   user_channels.each do |channel|
-    Subscription.create!(user: user,
-                         channel: channel)
+    Subscription.create!(user_id: user.id,
+                         channel_id: channel.id)
   end
 end
