@@ -1,0 +1,11 @@
+<div class="container">
+  <% if logged_in? %>
+    <h1> Welcome, <%=current_user.first_name%> </h1>
+  <% end %>
+
+  <table>
+    <form action="/logged" method="post">
+      <a href="/logout">Logout</a>
+    </form>
+  </table>
+ <div>
