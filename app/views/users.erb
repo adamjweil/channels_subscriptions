@@ -1,12 +1,13 @@
 <form action="/users" method="post">
   First name:<br>
-  <input type="text" name="first_name" value=""><br>
+  <input type="text" name="user[first_name]"><br>
   Last name:<br>
-  <input type="text" name="last_name" value=""><br><br>
+  <input type="text" name="user[last_name]"><br><br>
   Email:<br>
-  <input type="text" name="email" value=""><br><br>
+  <input type="text" name="user[email]"><br><br>
   Password:<br>
-  <input type="text" name="hashed_password" value=""><br><br>
+  <input type="text" name="user[hashed_password]"><br><br>
   <input type="submit" value="Submit">
 </form>
 
+<%#= @user.errors.full_messages %>
