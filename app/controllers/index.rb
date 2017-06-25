@@ -1,4 +1,3 @@
 get '/' do
-  redirect '/sessions/new'
-  # erb :index
+  redirect '/channels'
 end

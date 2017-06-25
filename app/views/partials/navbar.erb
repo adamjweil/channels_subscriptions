@@ -1,0 +1,14 @@
+<div id="nav">
+<nav>
+  <ul>
+    <% find_user %>
+    <% if logged_in? %>
+    <li ><a href='/account/show'>Account</a></li>
+    <li ><a href='/users/logout'>Log out</a></li>
+    <li ><a href='/channels'>Channels</a></li>
+    <% else %>
+    <li class=><a href='sessions/new'>Log in</a></li>
+    <li ><a href='/channels'>List of Channels</a></li>
+    <% end %>
+  </nav>
+</div>

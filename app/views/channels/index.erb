@@ -1,0 +1,10 @@
+<%= erb :'partials/navbar' %>
+
+<div>
+    <h1>List of Channels</h1>
+      <ul>
+        <% @channels.each do |channel| %>
+        <li><a href="/channel/:id"><%= channel.name %></a></li>
+        <% end %>
+      <ul>
+  </div
