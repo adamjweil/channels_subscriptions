@@ -1,4 +1,4 @@
 class Subscription < ApplicationRecord
-  belongs_to :user
-  belongs_to :channel
+  has_many :users
+  has_many :channels
 end

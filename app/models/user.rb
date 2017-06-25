@@ -2,8 +2,8 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   validates :hashed_password, presence: true
 
-  has_many :subcriptions, foreign_key: :user_id
-  has_many :channels, through: :subscriptions
+  has_many :subscriptions, foreign_key: :user_id
+  has_many :channels, through: :subscriptions, source: :channels
 
   def password
     @password ||= BCrypt::Password.new(hashed_password)
@@ -17,5 +17,9 @@ class User < ApplicationRecord
   def self.authenticate(email, password)
     @user ||= User.find_by_email(email)
     @user != nil && @user.password == password ? @user : nil
+  end
+
+  def channels
+
   end
 end

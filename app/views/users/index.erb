@@ -1,5 +1,8 @@
 <h1>Welcome to Generic Channel Streaming Company</h1>
 
+<!-- Log in email: melya@hirthe.org -->
+<!-- Password: password -->
+
 <div>
   <h3>Log in to your account:</h3>
   <form action="/users/:id" method="get">
@@ -17,3 +20,11 @@
     <input type="submit" value="Sign Up">
   </form>
 </div>
+
+<h2>Channels</h2>
+<ul>
+<% Channel.connection %>
+<% Channel.all.each do |chan| %>
+  <li><%=chan.name%>, <%=chan.callsign%>, <%=chan.price_per_month%>, <%=chan.subscribers%></li>
+  <% end %>
+</ul>
