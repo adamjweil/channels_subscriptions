@@ -25,13 +25,19 @@ post '/sessions' do
   @user = User.authenticate(params[:user])
   if !!@user
     session[:id] = @user.id
-    redirect "/sessions/#{@user.id}"
+    redirect "/users/#{@user.id}"
   else
     "ERROR"
   end
 end
 
-get '/sessions/:id' do
+before '/users/:id' do
+  unless session[:id]
+    halt "Access denied, please <a href='/sessions/login'>login</a>."
+  end
+end
+
+get '/users/:id' do
   if !!session[:id]
     @user = User.find(params[:id]) #define instance variable for view
     erb :'users/show' #show single user view
