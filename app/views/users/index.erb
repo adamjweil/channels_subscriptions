@@ -4,13 +4,13 @@
   <h3>Log in to your account:</h3>
   <form action="/users/:id" method="get">
     <label>Email:</label>
-    <input type="text" placeholder="hello@world.com">
+    <input type="text" placeholder="hello@world.com" name="user[email]"><br>
     <label>Password:</label>
-    <input type="password" placeholder="password">
+    <input type="password" placeholder="password" name="user[password]"><br>
+    <input type="submit" value="Log In">
   </form>
 </div>
 
-<!-- When you come back to this, give a name to the Submit input below -->
 <div>
   <h3>Sign up for an account below:</h3>
   <form action="/users/new" method="get">

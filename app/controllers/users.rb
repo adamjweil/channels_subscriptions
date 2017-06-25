@@ -7,9 +7,14 @@ get '/users/new' do
 end
 
 post '/users' do
-  @new_user = User.new(params[:users])
+  @new_user = User.create(params[:users])
 end
 
 get '/users/:id' do
-
+  p user = User.authenticate(params[:user][:email], params[:user][:password])
+  if user != nil
+    erb :'/users/show'
+  else
+    redirect '/'
+  end
 end
