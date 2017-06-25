@@ -1,5 +1,4 @@
 get '/' do
-
-  erb :index
+  redirect '/sessions/new'
+  # erb :index
 end
-
