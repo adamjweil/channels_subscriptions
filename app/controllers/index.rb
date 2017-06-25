@@ -1,5 +1,3 @@
 get '/' do
-
-  erb :index
+  redirect 'channels/index'
 end
-

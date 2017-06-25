@@ -1,0 +1,12 @@
+<%= erb(:'partials/nav_bar') %>
+<% @channels.each do |channel| %>
+<div>
+  <% @channel = channel %>
+  <%= erb(:'partials/display_channel_info') %>
+  <div>
+  <span>
+    More <a href="/channels/<%= @channel.id %>">information</a>
+  </span>
+  </div>
+</div>
+<% end %>

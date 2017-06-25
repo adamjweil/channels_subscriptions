@@ -1,0 +1,14 @@
+<div id="login">
+  <form action="/sessions" method="post">
+    <label>Login</label>
+      <%= erb(:'partials/login') %>
+  </form>
+  <div>
+    <span>If you dont have an account please </span>
+    <a href="/users/new">register</a>
+  </div>
+  <div>
+   <span>Continue as a</span>
+   <a href='/channels/index'> guest</a>
+ </div>
+</div>

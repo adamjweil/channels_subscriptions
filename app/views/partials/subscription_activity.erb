@@ -1,0 +1,18 @@
+<% find_user %>
+<% if subscribed? %>
+<div >
+  <form action="/channel/subscription" method="post">
+     <input type="hidden" name="_method" value="delete" />
+  <input type="hidden" value="<%= @channel.id %>" name= "channel_id">
+  <input type="submit" value="Unsubscribe">
+  </form>
+</div>
+
+<% else %>
+<div >
+  <form action="/channel/subscription/new" method="post">
+  <input type="hidden" value="<%= @channel.id %>" name= "channel_id">
+  <input type="submit" value="Subscribe">
+  </form>
+</div>
+<% end %>
