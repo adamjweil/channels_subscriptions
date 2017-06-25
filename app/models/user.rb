@@ -1,5 +1,15 @@
 class User < ApplicationRecord
-  # Remember to create a migration!
-  validates :email, :password, presence: true
-  validates :email,  uniqueness: true
+  has_many :subscriptions
+
+  include BCrypt
+
+  def password
+    @password ||= Password.new(password_hash)
+  end
+
+  def password=(new_password)
+    @password = Password.create(new_password)
+    self.password_hash = @password
+  end
+
 end

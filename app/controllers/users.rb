@@ -1,13 +1,17 @@
 get '/users/new' do
-  erb :'users/new'
+  erb :'user/new'
 end
 
 
 post '/users' do
-  #below works with properly formatted params in HTML form
-  create_user
-  redirect '/sessions/new'
+  @user = User.new(params[:user])
+  if @user.save
+    redirect '/sessions/new'
+  else
+    erb :'users/new'
+  end
 end
+
 
 get '/users/logout' do
   session[:id] = nil
