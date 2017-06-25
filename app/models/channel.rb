@@ -1,3 +1,4 @@
 class Channel < ApplicationRecord
-  # Remember to create a migration!
+  has_many :subscriptions, foreign_key: :channel_id
+  has_many :subscribers, class_name: :User, through: :subscriptions
 end
