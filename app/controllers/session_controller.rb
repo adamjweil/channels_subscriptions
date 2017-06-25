@@ -8,7 +8,6 @@ post '/sessions' do
       session[:id] = @user.id
       erb :'/account/show'
    else
-      # make better
       redirect '/sessions/new'
     end
 end
