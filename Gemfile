@@ -16,7 +16,8 @@ gem 'rake', '~> 12.0.0'
 gem 'bcrypt-ruby'
 
 gem 'shotgun'
-
+gem 'pry'
+gem 'pry-byebug'
 group :development, :test do
   gem 'faker', '~> 1.7.3'
   gem 'rspec', '~> 3.5'

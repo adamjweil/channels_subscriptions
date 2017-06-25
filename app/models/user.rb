@@ -1,6 +1,8 @@
 require 'bcrypt'
 
 class User < ActiveRecord::Base
+  has_many :subscriptions
+  has_many :channels, through: :subscriptions
   # users.password_hash in the database is a :string
   # changed password_hash to hashed_password to match migration
   include BCrypt
