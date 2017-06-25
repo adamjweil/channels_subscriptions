@@ -20,5 +20,10 @@ post '/login' do
 end
 
 get '/win' do
-  erb :win
+  erb :index
+end
+
+get '/logout' do
+  logout
+  erb :index
 end

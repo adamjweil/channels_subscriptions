@@ -13,4 +13,7 @@ helpers do
         redirect '/'
       end
     end
+    def logout
+      session[:id] = nil
+    end
 end

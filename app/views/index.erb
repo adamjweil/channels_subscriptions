@@ -9,5 +9,10 @@
   <form action="/login" method="get">
     <div><input type="submit" value="Log in"</div>
   </form>
+  <% if session[:id] %>
+    <form action="/logout" method="get">
+      <div><input type="submit" value="Log out"</div>
+    </form>
+    <%end%>
   </div>
 </div>
