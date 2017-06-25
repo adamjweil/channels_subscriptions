@@ -8,7 +8,7 @@ users = 100.times.map do
   User.create!( :first_name => Faker::Name.first_name,
                 :last_name  => Faker::Name.last_name,
                 :email      => Faker::Internet.email,
-                :password   => 'password' )
+                :hashed_password   => 'password' )
 end
 
 channels = ["Telemundo", "Unimas ", "Azteca 13", "Mexiquense",
@@ -21,7 +21,7 @@ end
 users.each do |user|
   user_channels = channels.sample(rand(2..4))
   user_channels.each do |channel|
-    Subscription.create!(user: user,
-                         channel: channel)
+    Subscription.create!(user_id: user.id,
+                         channel_id: channel.id)
   end
 end

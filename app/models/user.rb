@@ -3,4 +3,5 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   validates :email, presence: true
   validates :hashed_password, presence: true
+  # has_many :subscriptions
 end
