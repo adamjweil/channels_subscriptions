@@ -14,7 +14,7 @@ gem 'activesupport', '~> 5.0'
 
 gem 'rake', '~> 12.0.0'
 gem 'bcrypt-ruby'
-
+gem 'pry'
 gem 'shotgun'
 
 group :development, :test do
