@@ -15,4 +15,12 @@
     </form>
     <%end%>
   </div>
+  <div>
+    <ul>
+      <%find_channels%>
+      <%@channel.each do |channel| %>
+        <li><%= channel.name%></form></li>
+      <%end%>
+    <ul>
+  </div>
 </div>
