@@ -1,6 +1,6 @@
 <h1>Welcome to Generic Channel Streaming Company</h1>
 
-<!-- Log in email: melya@hirthe.org -->
+<!-- Log in email: joesph_sporer@grahamgutmann.com -->
 <!-- Password: password -->
 
 <div>
@@ -23,8 +23,10 @@
 
 <h2>Channels</h2>
 <ul>
-<% Channel.connection %>
 <% Channel.all.each do |chan| %>
-  <li><%=chan.name%>, <%=chan.callsign%>, <%=chan.price_per_month%>, <%=chan.subscribers%></li>
+  <li>Name: <%=chan.name%><br>
+  Callsign: <%=chan.callsign%><br>
+  Monthly Price: $<%=chan.price_per_month%><br>
+  Number of Subscribers: <%=chan.subscribers.count%></li><br>
   <% end %>
 </ul>

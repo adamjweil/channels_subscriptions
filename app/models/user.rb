@@ -3,7 +3,7 @@ class User < ApplicationRecord
   validates :hashed_password, presence: true
 
   has_many :subscriptions, foreign_key: :user_id
-  has_many :channels, through: :subscriptions, source: :channels
+  has_many :channels, through: :subscriptions, source: :channel
 
   def password
     @password ||= BCrypt::Password.new(hashed_password)
