@@ -1,4 +1,10 @@
-get '/subscriptions/new' do
-  # Ran into issue, did not get to test this
-  Subscription.create(user_id: sessions[:user_id], channel_id: params[:id])
+post '/channels/:id/subscriptions/new' do
+  Subscription.create(user_id: session[:user_id], channel_id: params[:id])
+  redirect '/users/:id'
+end
+
+delete '/channels/:id/subscriptions/:id' do
+  subscription_to_delete = Subscription.find(params[:id])
+  subscription_to_delete.destroy
+  redirect '/users/:id'
 end

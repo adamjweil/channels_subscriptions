@@ -8,15 +8,20 @@
 </ul>
 <div>
 <% if logged_in? && !subscribed?(@current_channel.id, current_user) %>
-  <a href='/subscriptions/new'>Subscribe</a>
+  <form method="post" action='/channels/<%= @current_channel.id %>/subscriptions/new'>
+    <input type='submit' value='Subscribe'>
+  </form>
 <% elsif logged_in? && subscribed?(@current_channel.id, current_user) %>
-  <a href='PLACEHOLDER'>Unsubscribe</a>
+  <form method="post" action='/channels/<%= @current_channel.id %>/subscriptions/<%= @current_subscription.id %>'>
+    <input type="hidden" name="_method" value="delete">
+    <input type='submit' value='Unsubscribe'>
+  </form>
 <% end %>
 </div>
 <div>
-<% if logged_in?%>
-  <a href='/subscriptions/<%= current_user.id %>'>Home</a>
-<% else%>
+<% if logged_in? %>
+  <a href='/users/<%= current_user.id %>'>Home</a>
+<% else %>
   <a href='/'>Home</a>
 <% end %>
 </div>

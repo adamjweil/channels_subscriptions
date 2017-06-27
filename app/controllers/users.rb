@@ -13,7 +13,7 @@ post '/users/new' do
   end
 end
 
-get '/user/:id' do
+get '/users/:id' do
   if logged_in?
     erb :'/users/profile'
   else

@@ -9,7 +9,7 @@ post '/login' do
     p "*" * 10
     p session.inspect
     p "*" * 10
-    redirect '/user/:id'
+    redirect '/users/:id'
   else
     "Login Failed"
   end

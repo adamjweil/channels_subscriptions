@@ -4,3 +4,10 @@
     <li> <a href="/channels/<%= channel.id %>"> <%= channel.name %></a> </li>
   <% end %>
 </ul>
+<div>
+<% if logged_in? %>
+  <a href='/users/<%= current_user.id %>'>Home</a>
+<% else %>
+  <a href='/'>Home</a>
+<% end %>
+</div>
