@@ -1,8 +1,10 @@
 class User < ApplicationRecord
+  validates :first_name, presence: true
+  validates :last_name, presence: true
   validates :email, presence: true, uniqueness: true
   validates :hashed_password, presence: true
 
-  has_many :subscriptions, foreign_key: :user_id
+  has_many :subscriptions
   has_many :channels, through: :subscriptions, source: :channel
 
   def password

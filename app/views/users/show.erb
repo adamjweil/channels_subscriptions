@@ -1,16 +1,14 @@
 <h1>Welcome, <%= @user.first_name %></h1>
 <h3>Below are the channels you are currently subscribed to:</h3>
 
-
-<% Subscription.connection %>
-<% Channel.connection %>
-<% User.connection %>
-
 <% total = 0 %>
+
+<%= @user %>
+
 <ul>
 <% @user.channels do |chan| %>
   <% total += chan.price_per_month %>
-  <li><%= chan.name %>, <%= chan.price_per_month %></li>
+  <li><%= chan.name %><br><%= chan.price_per_month %></li>
 <% end %>
 </ul>
 <p><%= total %>
