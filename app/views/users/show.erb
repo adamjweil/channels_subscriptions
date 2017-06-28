@@ -3,8 +3,6 @@
 
 <% total = 0 %>
 
-<%= @user %>
-
 <ul>
 <% @user.channels do |chan| %>
   <% total += chan.price_per_month %>
