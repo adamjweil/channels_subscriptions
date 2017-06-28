@@ -1,12 +1,17 @@
 <%= erb :'partials/navbar' %>
 <h1> Channel Page </h1>
  <div>
-     <h1>Channels</h1>
        <ul>
-         <% @channels.each do |channel| %>
-         <p>Channel Name: <%=@channel.name %>
-         <p>Price/month: <%=@channel.price_per_month %>
-         <p>Call Sign: <%=@channel.callsign %>
+         <li>Channel Name: <%=@channel.name %></li>
+         <li>Price/month: <%=@channel.price_per_month %></li>
+         <li>Call Sign: <%=@channel.callsign %></li>
+         <% find_user %>
+         <% if logged_in? %>
+         <li ><a href='/user/<%= find_user.id%>'>Account</a></li>
+         <li ><a href='/channels'>Subscribe</a></li>
+         <% else %>
+         <li class=><a href='/sessions/new'>Log in</a></li>
+         <li ><a href='/channels'>Back to Channel List</a></li>
          <% end %>
-       <ul>
+       </ul>
    </div>

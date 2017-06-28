@@ -1,10 +1,15 @@
 get '/channels' do
   @channels = Channel.all
-  erb :'channels/index'
+  erb :'/channels/index'
 end
 
 
-get '/channels/:id' do
-  @channel = Channel.find_by(params[:id])
-  redirect 'channels/show'
+post '/channels/:id' do
+  @channel = Channel.find(params[:id])
+  erb :'channels/show'
 end
+
+# post '/channels/:id' do
+#   @channel = Channel.find(params[:id])
+#   erb :'channels/show'
+# end

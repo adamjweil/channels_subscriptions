@@ -19,7 +19,7 @@ get '/users/new' do
  end
 
 
- get '/users/:id' do
+ get '/user/:id' do
    @user = User.find(params[:id]) #define instance variable for view
-   erb :'users/show' #show single user view
+   erb :'user/show' #show single user view
  end
