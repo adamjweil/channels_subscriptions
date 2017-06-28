@@ -1,0 +1,12 @@
+<%= erb :'partials/navbar' %>
+<h1> Channel Page </h1>
+ <div>
+     <h1>Channels</h1>
+       <ul>
+         <% @channels.each do |channel| %>
+         <p>Channel Name: <%=@channel.name %>
+         <p>Price/month: <%=@channel.price_per_month %>
+         <p>Call Sign: <%=@channel.callsign %>
+         <% end %>
+       <ul>
+   </div>

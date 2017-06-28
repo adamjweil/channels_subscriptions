@@ -1,0 +1,11 @@
+<%= erb(:'partials/navbar') %>
+ <div id="login">
+   <form action="/sessions" method="post">
+     <label>Log In</label>
+       <%= erb(:'partials/login') %>
+   </form>
+   <div>
+     <span>Register for a new account below </span>
+     <a href="/users/new"> Register </a>
+   </div>
+ </div>
