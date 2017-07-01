@@ -15,7 +15,7 @@ post '/channels/:id/subscribe' do
       channel_id: params[:id])
     new_subscription.save
   end
-  redirect '/profile'
+  redirect "/users/#{current_user.id}/profile"
 end
 
 delete '/channels/:id/unsubscribe' do
@@ -25,7 +25,7 @@ delete '/channels/:id/unsubscribe' do
   if new_subscription
     new_subscription.delete
   end
-  redirect "/users/#{current_user.id}"
+  redirect "/users/#{current_user.id}/profile"
 end
 
 =begin

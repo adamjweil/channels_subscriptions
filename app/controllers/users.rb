@@ -12,12 +12,12 @@ post '/users' do
   end
 end
 
-before '/users/:id' do
+before '/users/:id/profile' do
   unless logged_in?
-    redirect '/'
+    redirect '/404'
   end
 end
 
-get '/users/:id' do
+get '/users/:id/profile' do
   erb :'/users/show'
 end

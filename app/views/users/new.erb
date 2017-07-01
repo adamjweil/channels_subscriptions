@@ -3,22 +3,29 @@
     <label>First Name</label>
     <input type='text' name='user[first_name]' value=<%=@user.first_name%>>
   <%if @user.errors %>
-    <%=@user.errors.messages[:first_name].join("|")%>
+    <%=@user.errors.messages[:first_name].join(" and")%>
   <% end %>
   </div>
   <div>
     <label>Last Name</label>
     <input type='text' name='user[last_name]'value=<%=@user.last_name%>>
-    <%=@user.errors.messages[:last_name].join("|")%>
+    <%if @user.errors %>
+      <%=@user.errors.messages[:last_name].join(" and")%>
+    <% end %>
   </div>
   <div>
     <label>Email</label>
     <input type='text' name='user[email]' value=<%=@user.email%>>
-    <%=@user.errors.messages[:email].join("|")%>
+    <%if @user.errors %>
+      <%=@user.errors.messages[:email].join(" and")%>
+    <% end %>
   </div>
   <div>
     <label>Password</label>
     <input type='password' name='user[password]'>
+    <%if @user.errors %>
+      <%=@user.errors.messages[:password_length].join(" and")%>
+    <% end %>
   </div>
   <input type='submit'>
 </form>

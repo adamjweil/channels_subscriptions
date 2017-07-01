@@ -11,7 +11,8 @@
 </head>
 <body>
   <%if logged_in? %>
-    Welcome <%=current_user.first_name%>!
+    Welcome <%=current_user.first_name%>! |
+    <a href='/users/<%=current_user.id%>/profile'>Profile</a> |
     <a href='/sessions/logout'>Log Out</a> |
   <%else%>
     <a href='/users/new'>Sign Up</a> |

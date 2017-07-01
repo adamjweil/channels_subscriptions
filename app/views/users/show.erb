@@ -1,3 +1,4 @@
+<% if logged_in? %>
 <p>Profile Page</p>
 
 <p>List of your channels:</p>
@@ -6,3 +7,4 @@
   <li><%=channel.id%> - <%=channel.name%>: <%=channel.price_per_month%></li>
 <%end%>
 </ul>
+<% end %>
