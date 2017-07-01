@@ -2,7 +2,9 @@
   <div>
     <label>First Name</label>
     <input type='text' name='user[first_name]' value=<%=@user.first_name%>>
+  <%if @user.errors %>
     <%=@user.errors.messages[:first_name].join("|")%>
+  <% end %>
   </div>
   <div>
     <label>Last Name</label>

@@ -1,20 +1,23 @@
 get '/users/new' do
   @user = User.new
-  erb :'/users/new_user'
+  erb :'/users/new'
 end
 
 post '/users' do
   @user = User.new(params[:user])
-  if @user.valid? && params[:user][:password].length>0
-    @user.save
+  if @user.save
     erb :'/users/success'
   else
-    erb :'/users/new_user'
+    erb :'/users/new'
   end
 end
 
+before '/users/:id' do
+  unless logged_in?
+    redirect '/'
+  end
+end
 
-get '/profile' do
-  @current_user = current_user
-  erb :'/users/profile'
+get '/users/:id' do
+  erb :'/users/show'
 end

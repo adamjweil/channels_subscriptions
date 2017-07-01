@@ -3,23 +3,16 @@ get '/sessions/new' do
 end
 
 post '/sessions' do
-  p "*"*100
-  p params[:user][:email]
-  p params[:user][:password]
-  if !params[:user][:email].nil? || !params[:user][:password].nil?
-    if User.authenticate(params[:user][:email],params[:user][:password])
+  if User.authenticate(params[:user][:email],params[:user][:password])
       session[:user_id] = User.find_by(email: params[:user][:email]).id
       redirect '/profile'
     else
       redirect '/404'
     end
-  else
-    redirect '/404'
-  end
 end
 
 get '/sessions/logout' do
-  session.delete(:user_id)
+  session.clear
   redirect '/'
 end
 

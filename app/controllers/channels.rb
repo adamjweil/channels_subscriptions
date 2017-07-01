@@ -9,7 +9,7 @@ get '/channels/:id' do
 end
 
 post '/channels/:id/subscribe' do
-  if !current_user.channels.exists?(id: params[:id])
+  unless current_user.channels.exists?(id: params[:id])
     new_subscription = Subscription.new(
       user_id: current_user.id,
       channel_id: params[:id])
@@ -18,14 +18,14 @@ post '/channels/:id/subscribe' do
   redirect '/profile'
 end
 
-post '/channels/:id/unsubscribe' do
-  if current_user.channels.exists?(id: params[:id])
-    new_subscription = Subscription.find_by(
-      user_id: current_user.id,
-      channel_id: params[:id])
+delete '/channels/:id/unsubscribe' do
+  new_subscription = Subscription.find_by(
+    user_id: current_user.id,
+    channel_id: params[:id])
+  if new_subscription
     new_subscription.delete
   end
-  redirect '/profile'
+  redirect "/users/#{current_user.id}"
 end
 
 =begin

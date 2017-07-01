@@ -7,10 +7,12 @@
 <%if logged_in?%>
   <%if current_user.channels.exists?(id: @channel.id)%>
     <form action='/channels/<%=@channel.id%>/unsubscribe' method='post'>
+      <input type="hidden" name = "_method" value = "delete">
       <input type='submit' value='unsubscribe'>
     </form>
   <% else %>
     <form action='/channels/<%=@channel.id%>/subscribe' method='post'>
+      <input type="hidden" name = "_method" value = "post">
       <input type='submit' value='subscribe'>
     </form>
   <% end %>
