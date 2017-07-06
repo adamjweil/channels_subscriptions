@@ -17,3 +17,13 @@ def total_cost
   end
   return sum
 end
+
+def subscribed?
+  match = current_user.channels.select do |channel|
+    channel == current_channel
+  end
+  if match.length > 0
+    return true
+  end
+  return false
+end

@@ -6,14 +6,14 @@
   <li>Total Subscribers: <%=@current_channel.subscribers.count%></li>
 </ul>
 <div>
-  <% if logged_in?%>
+  <% if logged_in? && !subscribed?%>
   <form method='post' action='/channels/<%=@current_channel.id%>/subscribe'>
     <input type='submit' value='Subscribe'>
   </form>
   <% end %>
-</div>
-<div>
+  <% elsif logged_in? && subscribed?%>
   <form method='post' action='/channels/<%=@current_channel.id>/unsubscribe'>
     <input type='submit' value='Unsubscribe'>
   </form>
+  <% end %>
 </div>
