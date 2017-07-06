@@ -1,0 +1,15 @@
+<h1><%= current_user.first_name%>'s Profile Page</h1>
+<div>
+<p><%= current_user.first_name %>'s Channels:</p>
+<ul>
+<% current_user.channels.each do |channel| %>
+  <li><%=channel.name%>: $<%=channel.price_per_month%> </li>
+  <% end %>
+</ul>
+
+<p>Total cost per month: <%=total_cost%></p>
+
+
+
+<a href='/'>Homepage </a>
+</div>

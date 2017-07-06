@@ -1,0 +1,5 @@
+<ul>
+  <% @all_channels.each do |channel| %>
+  <li> <a href='/channels/<%= channel.id %>'> <%= channel.name %></a></li>
+  <% end %>
+</ul>

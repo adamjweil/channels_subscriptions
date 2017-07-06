@@ -1,0 +1,19 @@
+<h1> <%=@current_channel.name%> </h1>
+<ul>
+  <li>Channel Name: <%=@current_channel.name%></li>
+  <li>Callsign: <%=@current_channel.callsign%></li>
+  <li>Price Per Month: <%=@current_channel.price_per_month%></li>
+  <li>Total Subscribers: <%=@current_channel.subscribers.count%></li>
+</ul>
+<div>
+  <% if logged_in?%>
+  <form method='post' action='/channels/<%=@current_channel.id%>/subscribe'>
+    <input type='submit' value='Subscribe'>
+  </form>
+  <% end %>
+</div>
+<div>
+  <form method='post' action='/channels/<%=@current_channel.id>/unsubscribe'>
+    <input type='submit' value='Unsubscribe'>
+  </form>
+</div>

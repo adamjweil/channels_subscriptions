@@ -1,3 +1,8 @@
 class Channel < ApplicationRecord
-  # Remember to create a migration!
+  has_many :subscriptions
+  has_many :subscribers, through: :subscriptions, source: :user
+
+  validates :name, presence: true
+  validates :callsign, presence: true
+  validates :price_per_month, presence: true
 end
