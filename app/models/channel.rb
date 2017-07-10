@@ -1,3 +1,5 @@
 class Channel < ApplicationRecord
-  # Remember to create a migration!
+  validates :name, presence: true
+  validates :callsign, presence: true
+  validates :price_per_month, presence: true
 end
