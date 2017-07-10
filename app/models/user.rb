@@ -3,7 +3,8 @@ require 'bcrypt'
 class User < ApplicationRecord
   include BCrypt
 
-  has_many :channels
+  has_many :subscriptions
+  has_many :channels, through: :subscriptions
 
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true

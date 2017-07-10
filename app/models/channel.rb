@@ -1,6 +1,7 @@
 class Channel < ApplicationRecord
 
-  has_many :users
+  has_many :subscriptions
+  has_many :users, through: :subscriptions
 
   validates :name, presence: true
   validates :callsign, presence: true
