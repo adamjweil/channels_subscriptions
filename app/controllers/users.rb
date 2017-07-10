@@ -17,6 +17,6 @@ post '/users' do
 end
 
 get '/users/:id' do
-  "Shows a specific user"
+  @users_channels = current_user.channels
   erb :'/users/show'
 end

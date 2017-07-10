@@ -1,1 +1,10 @@
-Here I am!
+<% if logged_in? %>
+<h1>Here's a list of all your channels:</h1>
+
+  <% if @user_channels %>
+  <% @user_channels.each do |channel| %>
+  <li><%= channel.name %></li>
+  <% end %>
+
+<% end %>
+<% end %>

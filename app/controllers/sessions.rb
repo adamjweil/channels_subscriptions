@@ -7,7 +7,7 @@ post '/login' do
   if user
     user.authenticate(params[:user][:password])
     session[:user_id] = user.id
-    redirect '/restricted_area'
+    redirect '/users/:id'
   else
     erb :'/users/login'
   end
