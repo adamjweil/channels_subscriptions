@@ -15,3 +15,8 @@ post '/users' do
     erb :'/users/new'
   end
 end
+
+get '/users/:id' do
+  "Shows a specific user"
+  erb :'/users/show'
+end
