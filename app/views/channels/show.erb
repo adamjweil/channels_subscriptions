@@ -1,5 +1,20 @@
-<p>About this channel:</p>
-
+<p>About This Channel:</p>
 <li><%= @channel.name %></li>
+
+<p>This Channel's Callsign:</p>
 <li><%= @channel.callsign %></li>
+
+<p>Monthly Cost:</p>
 <li><%= @channel.price_per_month %></li>
+
+<p>Number Of Subscribers:</p>
+
+
+
+<%= @channel.subscriptions.count %>
+
+
+
+
+
+
