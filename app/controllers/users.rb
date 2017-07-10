@@ -1,5 +1,5 @@
 get '/users' do
-  "Hi User!"
+  erb :'/users/users_index'
 end
 
 

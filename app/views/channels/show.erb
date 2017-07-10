@@ -8,13 +8,17 @@
 <li><%= @channel.price_per_month %></li>
 
 <p>Number Of Subscribers:</p>
-
-
-
 <%= @channel.subscriptions.count %>
 
+<br>
+<hr>
+<% if logged_in? %>
+<form action="/channels/:id" method="put">
+  <input type="submit" value="Subscribe">
+</form>
 
 
-
-
-
+<form action="/channels/:id" method="delete">
+  <input type="submit" value="Unsubscribe">
+</form>
+<% end %>

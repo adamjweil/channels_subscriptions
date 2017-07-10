@@ -1,0 +1,13 @@
+<h1>Welcome to your favorite cable stations!</h1>
+
+<% if !logged_in? %>
+
+<li class="pipe-separate t-light-green left"><a href="/users/new">register</a></li>
+
+<li class="pipe-separate t-light-green left"><a href="/login">login</a></li>
+<% end %>
+
+<% if logged_in? %>
+
+<li class="pipe-separate t-light-green right"><a href="/logout">logout</a></li>
+<% end %>
