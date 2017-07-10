@@ -11,6 +11,9 @@
 </head>
 <body>
 <a href="/channels">Home</a>
+<% if logged_in? %>
+<a href="/logout">Logout</a>
+<% end %>
   <%= yield %>
 </body>
 </html>
