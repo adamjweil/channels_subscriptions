@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   # Remember to create a migration!
+  has_many :subscriptions
   has_many :channels
   has_many :channels, through: :subscriptions
 
