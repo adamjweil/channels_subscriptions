@@ -13,12 +13,15 @@
 <br>
 <hr>
 <% if logged_in? %>
-<form action="/channels/:id" method="put">
-  <input type="submit" value="Subscribe">
+<form action="/subscriptions" method="post">
+  <input type="hidden" name="channel" value="<%= @channel.id %>">
+  <input type="submit"  value="Subscribe">
 </form>
 
 
-<form action="/channels/:id" method="delete">
-  <input type="submit" value="Unsubscribe">
+<form action="/subscriptions" method="post">
+  <input name="_method" type="hidden" value="delete"/>
+  <input name="channel" type="hidden" value="<%= @channel.id %>">
+  <input name="submit" type="submit" value="Delete"/>
 </form>
 <% end %>

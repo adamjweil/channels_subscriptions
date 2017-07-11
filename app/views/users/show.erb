@@ -1,22 +1,26 @@
 <% if logged_in? %>
+
 <h1>Here's a list of all your channels:</h1>
 
-  <% if @user_channels %>
-  <% @user_channels.each do |channel| %>
-  <li><%= channel.name %></li>
+<% if @user.channels %>
+  <% @user.channels.each do |channel| %>
+    <li><%= channel.name %></li>
+    <% end %>
   <% end %>
 
 <hr>
 <h3>Here's the total price per month of all your channels:</h3>
 
-  <% if @user_channels %>
-  <% @user_channels.each do |channel| %>
-  <li><%= channel.price_per_month %></li>
-  <% end %>
-
-    <% end %>
+<% if @user.channels %>
+<% @user.channels.each do |channel| %>
+<li><%= channel.price_per_month %></li>
   <% end %>
 <% end %>
+
+<% else %>
+<h1>"You cannot see this!!!"</h1>
+<% end %>
+
 
 
 <%# Not really sure why these items are not being displayed. Confused...%>

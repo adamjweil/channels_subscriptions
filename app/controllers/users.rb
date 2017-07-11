@@ -17,7 +17,11 @@ post '/users' do
   end
 end
 
+
 get '/users/:id' do
-  @users_channels = current_user.channels
+  @user = User.find_by(id: params[:id])
+  # If session doesn't exist, then
+  #  .channels will return nil
+  # @user_channels = current_user.channels
   erb :'/users/show'
 end
