@@ -1,8 +1,10 @@
 class User < ApplicationRecord
   # Remember to create a migration!
+  has_many :channels
+  has_many :channels, through: :subscriptions
 
   validates :email, presence: true, uniqueness: true
-  validates :password, presence: true
+  validates :first_name, :last_name, :password, presence: true
 
   def self.authenticate(login_credentials)
     user = User.find_by(email: login_credentials[:email])
