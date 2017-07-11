@@ -1,1 +1,8 @@
 <h1> Hello <%= @user.first_name %> <%= @user.last_name %> </h1>
+
+<div class="subscription_list">
+  <% @user.channels.each do |c| %>
+    <a href="/channels/<%= c.id %>"><%= c.name %></a>
+  <% end %>
+  <br> total: <%= @user.channels.reduce(0) { |sum, c| sum += c.price_per_month } %> </br>
+</div>

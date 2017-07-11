@@ -1,6 +1,24 @@
 <body>
-  <div class="container">
-    <h1>Welcome</h1>
-    <p>world!</p>
-  </div>
+
+  <% if logged_in? %>
+    <ul>
+      <% Channel.all.each do |c| %>
+      <li>
+        <a href="/channels/<%= c.id %>"> <%= c.name %></a>
+      </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <div class="container">
+      <h1>Cable</h1>
+      <p>(Still relevant?)?</p>
+    </div>
+
+    <ul>
+      <% Channel.all.each do |c| %>
+      <li> <%= c.name %> </li>
+      <% end %>
+    </ul>
+  <% end %>
+
 </body>
