@@ -1,6 +1,14 @@
 <body>
 <a href='/'>🏚</a>
 
+<% if @errors %>
+<ul>
+  <% @errors.each do |error| %>
+    <li> <%= error %> </li>
+  <% end %>
+</ul>
+<% end %>
+
 <h1 align="center">Sign Up!</h1>
 <form align="center" action="/users" method="post">
   <label>First Name</label>

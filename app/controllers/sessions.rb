@@ -17,16 +17,26 @@ end
 
 
 post '/users' do
-  User.create(params[:user])
-  redirect '/'
+  @user = User.create(params[:user])
+  if @user.valid?
+    session[:user_id] = User.find_by(email: params[:user][:email]).id
+    redirect "/users/#{session[:user_id]}"
+  else
+    status 422
+    @errors = @user.errors.full_messages
+    erb :'users/new', layout: false
+  end
 end
 
 post '/sessions' do
+
   if User.authenticate(params[:user])
     session[:user_id] = User.find_by(email: params[:user][:email]).id
     redirect "/users/#{session[:user_id]}"
   else
-    "Login Failed"
+    status 422
+    @errors = ["Invalid email or password"]
+    erb :'users/sessions', layout: false
   end
 end
 
