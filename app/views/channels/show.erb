@@ -3,4 +3,21 @@
   <h2> <%= @channel.callsign %> </h2>
   <h2>Monthly: $<%= @channel.price_per_month %> </h2>
   <h3> Current number of Subscribers: <%= @channel.subscribers.length %> </h3>
+
+  <% if @subs %>
+
+    <form action="/subscriptions/<%= @subs.try(:id) %>" method="POST">
+      <input type="hidden" name="_method" value="delete"/>
+      <input type="submit" value="Unsubscribe"/>
+    </form>
+
+  <% else %>
+
+    <form action="/subscriptions" method="POST">
+      <input type="hidden" name="channel_id" value="<%= @channel.id %>"/>
+      <input type="submit" value="Subscribe"/>
+    </form>
+
+  <% end %>
+
 </body>
