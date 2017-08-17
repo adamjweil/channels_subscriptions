@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+    has_many :subscriptions
+    has_many :channels, through: :subscriptions
 
     validates :email, :password, presence: true
     validates :email, uniqueness: true
