@@ -22,4 +22,9 @@ class User < ActiveRecord::Base
       nil
     end
   end
+
+  def total_price_per_month
+    channels.sum(:price_per_month)
+  end
+
 end

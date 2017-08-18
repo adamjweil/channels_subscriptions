@@ -1,0 +1,18 @@
+<%= @channel.subscribers.size %>
+
+<% if @subscription %>
+  <form action="/subscriptions/<%= @subscription.try(:id) %>" method="POST">
+    <input type="hidden" name="_method" value="delete"/>
+    <input type="submit" value="Unsubscribe"/>
+  </form>
+
+  <% else %>
+
+    <form action="/subscriptions" method="POST">
+      <input type="hidden" name="channel_id" value="<%= @channel.id %>"/>
+      <input type="submit" value="Subscribe"/>
+    </form>
+
+<% end %>
+
+<%= @channel.price_per_month %>

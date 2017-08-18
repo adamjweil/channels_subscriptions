@@ -1,0 +1,5 @@
+<ul>
+<% @channels.each do |channel| %>
+ <%= erb :'partials/channel', locals: { channel: channel } %>
+  <% end %>
+</ul>

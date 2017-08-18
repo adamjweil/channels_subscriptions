@@ -1,75 +1,58 @@
-.container {
-  margin: 20px auto;
-  width: 800px;
-  padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+#login_form form {
+    background-color: F8F8F8;
+    width: 50%;
+    border: 3px solid #f1f1f1;
+    margin-top: 20px;
+    margin-left: 100px;
+    margin-bottom: 50px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
 }
 
-.container h1 {
-  font-size: 17pt;
-
+#login form input[type=email], input[type=password] {
+    width: 50%;
+    margin: 8px 0;
+    display: block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
 }
 
+#login_form form input[type=submit] {
+  background-color: #008CBA;
+  color: white;
+  padding: 5px 5px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  border: 3px solid #f1f1f1;
+  opacity: .5;
+}
+
+#login form input[type=submit]:hover {
+  opacity: 0.8;
+}
 nav {
-  width: 100%;
-  height: 40px;
-  font-weight: bold;
+  display: block;
+  font-size: 10px;
 }
-
-nav .brand, nav .brand a {
-  margin-left: 25px;
-  font-size: 18pt;
-  text-decoration: none;
-  color: #444;
-  width: 60%;
-  display: inline-block;
-}
-
 nav ul {
-  display: inline-block;
-  width: 30%;
-  text-align: right;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
 }
 
 nav li {
-  margin-right: 25px;
-  display: inline;
+    float: right;
 }
 
 nav li a {
-  color: gray;
-  text-decoration: none;
-}
-
-nav li a:hover {
-  text-decoration: underline;
-}
-
-form label {
-  font-weight: bold;
-  margin-right: 20px;
-}
-
-input {
-  margin-bottom: 10px;
-}
-
-.errors {
-  color: red;
-}
-
-form.quirks {
-  display: inline-block;
-}
-
-.submit {
-  text-align: center;
-}
-
-.label {
-  font-weight: bold;
-  float: left;
-  text-align: right;
-  margin-right: 20px;
-  width: 200px;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
 }
