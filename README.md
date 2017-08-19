@@ -72,3 +72,4 @@ With user authentication in place, let's create some CRUD pages.
   * a button to unsubscribe from the channel, if the user is logged in and already subscribed
 
 After three hours create a pull request and tag your instructors. Feel free to continue working on this challenge, but be sure to mark where you are after three hours.
+# channels_subscriptions
