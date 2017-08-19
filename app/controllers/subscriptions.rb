@@ -17,6 +17,7 @@ end
 # delete
 delete '/subscriptions/:id' do
   # delete the subscriptions
+  # Subscription.find(params[:id]).destroy
   # Dont do this
   redirect "/channels/#{Subscription.find(params[:id]).destroy.channel.id}"
 end

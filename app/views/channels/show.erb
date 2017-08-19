@@ -1,4 +1,4 @@
-<%= @channel.subscribers.size %>
+<h5># Of Subscribers: <%= @channel.subscribers.size %></h5>
 
 <% if @subscription %>
   <form action="/subscriptions/<%= @subscription.try(:id) %>" method="POST">
@@ -15,4 +15,4 @@
 
 <% end %>
 
-<%= @channel.price_per_month %>
+<h5>Price Per Month: <%= @channel.price_per_month %></h5>
