@@ -1,5 +1,5 @@
 <ul>
-<% @channels.each do |channel| %>
- <%= erb :'partials/channel', locals: { channel: channel } %>
+<% channels.each do |channel| %>
+ <a href="/user/channels/<%= channel.id %>"> <%= erb :'partials/channel', locals: { channel: channel } %></a>
   <% end %>
 </ul>

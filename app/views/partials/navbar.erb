@@ -1,10 +1,15 @@
 <div id="nav">
 <nav>
   <ul>
-    <li><a href='/users/profile'>Account</a></li>
-    <li><a href='/sessions/new'>Log in</a></li>
-    <li><a href='/users/new'>Register</a></li>
-    <li><a href='/sessions/logout'>Log out</a></li>
+    <% if logged_in? %>
+      <li><a href='/users/profile'>Account</a></li>
+      <li><a href='/channels'>Channels</a></li>
+      <li><a href='/logout'>Log out</a></li>
+    <% else %>
+      <li><a href='/channels'>Channels</a></li>
+      <li><a href='/users/new'>Register</a></li>
+      <li><a href='/sessions/new'>Log in</a></li>
+    <% end %>
   </ul>
 </nav>
 </div>
